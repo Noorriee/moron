@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cute Letter Link</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+  :root {
+    --primary-gradient-start: #f093fb;
+    --primary-gradient-end: #f5576c;
+    --background-color: #fff0f6;
+    --text-color: #4a1a4b;
+    --shadow-color: rgba(245, 87, 108, 0.3);
+    --border-radius: 16px;
+    --spacing-unit: 16px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: var(--spacing-unit);
+  }
+
+  .container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  button.envelope-button {
+    background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 24px 32px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    transition: transform 0.3s ease;
+    outline-offset: 4px;
+  }
+
+  button.envelope-button:focus-visible {
+    outline: 3px solid #f5576c;
+    outline-offset: 6px;
+  }
+
+  button.envelope-button:hover {
+    transform: scale(1.08);
+  }
+
+  .envelope-icon {
+    width: 48px;
+    height: 48px;
+    fill: white;
+    transition: transform 0.3s ease;
+  }
+
+  button.envelope-button.open .envelope-icon {
+    transform: rotate(-10deg) translateX(3px);
+  }
+
+  .message-box {
+    margin-top: var(--spacing-unit);
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 24px 32px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    color: #3a0f3a;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+  }
+
+  .message-box.show {
+    opacity: 1;
+    max-height: 1000px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <button class="envelope-button" aria-expanded="false" aria-controls="cuteMessage" aria-label="Open cute letter message">
+      <svg class="envelope-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" >
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+      </svg>
+    </button>
+    <div id="cuteMessage" class="message-box" role="region" aria-live="polite" aria-atomic="true">
+       YK ajj da din c jdo asi pehli waar gl kiti c ...i cant believe that 1 saal ho v gya oh gl nu ....eda lg rea k hle tusi kl hi mainu puchya mere paper baare ...I AM GLAD WE ARE TOGTHER AFTER SO MANY DIFFICULTIES....THROUGH THIS IM CONGRATULATING YOU ...I HABE BEEN WORKING IN THIS LINK SINCE LAST SUNDAY FOR TODAY.....however Yk i dont like when u dont value me. see raat di gl hle thandi ni hoi hna te naal e tusu hun frto edi krna shuru krta .....blame ni kr rhi per bnda aap v ta soche oh aap tusi sochna nhi a hna and you know i hate when i do things like those . tusi hun frto mainu bole a jd k glti tuhadi c hun v....jdo mai game lai keha tusi ki keha 'mai sona a mai eh krna etc'...chlo je krr kra k aa hi gye a ki khelni a ODO V TUSI MAINU SUNA RAHE A GL ...chlo eh v theeka per mainu tusi rudely boli jao ki mai khana a ye vo ...sahib waari ki ho gya? odo badi sheti tuhadi bhukh mrr gyi te khelan v lg gye.....ohde saamne v tusi pehla shuru hoye theeka ki eh pro a ehne ki khelna etc ...eh jaande hoye v k tusi glt a ithe ......nut ypu know what I DONT FUCKING CARE MY LOVE ....TUSI KHELNA KHELO NHI KHELNA NA KHELO ...GL KRNI KRI NAA V KRNI TAVI THEEKA ...TUSI JO KRNA KR SAKDE O...ANYHOW I LOVE YOU SO MUCH
+    </div>
+  </div>
+
+<script>
+  const button = document.querySelector('.envelope-button');
+  const messageBox = document.getElementById('cuteMessage');
+
+  button.addEventListener('click', () => {
+    const isOpen = button.classList.toggle('open');
+    messageBox.classList.toggle('show', isOpen);
+    button.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+</body>
+</html>
+
